@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve" : "serve -s ./dist",
-    "build": "node esbuild.mjs"
+    "build": "node build.mjs"
   },
   "keywords": [],
   "author": "",

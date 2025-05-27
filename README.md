@@ -10,3 +10,4 @@ npm run serve
 ```
 
 A GitHub Actions workflow in `.github/workflows/deploy.yml` builds the site and publishes the `dist/` folder to GitHub Pages whenever you push to the `master` branch.
+

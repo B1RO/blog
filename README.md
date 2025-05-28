@@ -1,6 +1,6 @@
 # MDX Blog
 
-Place your `.mdx` files inside the `content/` folder. Running `npm run build` converts each file to an HTML page in `dist/` and creates an index page linking to them.
+Place your `.mdx` files inside the `content/` folder. Running `npm run build` converts each file to an HTML page in `dist/` and creates an index page linking to them. Any other files in `content/` (like images) are copied to `dist/` so you can reference them from your posts.
 
 Serve the generated site locally with:
 

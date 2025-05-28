@@ -22,13 +22,10 @@ jobs:
           npm install
           npm run build
 
-      - name: Ensure output directory exists
-        run: mkdir -p ./public
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./dist
           name: github-pages
 
   deploy:

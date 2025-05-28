@@ -8,7 +8,11 @@ const distDir = path.resolve('dist')
 
 await fs.mkdir(distDir, { recursive: true })
 
-const files = (await fs.readdir(contentDir)).filter(f => f.endsWith('.mdx'))
+const entries = await fs.readdir(contentDir, { withFileTypes: true })
+const files = entries.filter(e => e.isFile() && e.name.endsWith('.mdx')).map(e => e.name)
+for (const asset of entries.filter(e => e.isFile() && !e.name.endsWith('.mdx'))) {
+  await fs.copyFile(path.join(contentDir, asset.name), path.join(distDir, asset.name))
+}
 
 let links = ''
 for (const file of files) {

@@ -2,6 +2,8 @@ import esbuild from 'esbuild';
 import mdx from "@mdx-js/esbuild"
 import fs from "fs"
 
+const style = `<style>\n  body { max-width: 800px; margin: 0 auto; }\n  p:first-of-type { color: gray; }\n</style>`
+
 esbuild
   .build({
     entryPoints: ['src/index.tsx'],
@@ -20,6 +22,7 @@ const html = `
 <html>
 <head>
   <title>My App</title>
+  ${style}
 </head>
 <body>
   <div id="root"/>
